@@ -9,16 +9,15 @@ def initialize_database():
         CREATE TABLE IF NOT EXISTS task_list(
             id INTEGER PRIMARY KEY AUTOINCREMENT, 
             name TEXT NOT NULL, 
-            status INTEGER DEFAULT 0
+            status INTEGER DEFAULT 0 NOT NULL
         )
     """)
 
-print("Banco de dados criado com sucesso!")
-
-def create_task():
-    cur.execute("""
-        INSERT INTO task_list (name, status) VALUES (?, ?)
-    """)
+def create_task(name, status = 0):
+    sql = """ INSERT INTO task_list (name, status) VALUES (?, ?) """
+    
+    cur.execute(sql,(name,status))
+    
     con.commit()
-    return 
+    return cur.lastrowid
 
