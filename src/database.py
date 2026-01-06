@@ -15,9 +15,26 @@ def initialize_database():
 
 def create_task(name, status = 0):
     sql = """ INSERT INTO task_list (name, status) VALUES (?, ?) """
-    
     cur.execute(sql,(name,status))
-    
     con.commit()
+
     return cur.lastrowid
+
+def show_all_tasks():
+    for row in cur.execute("""SELECT id, name, status FROM task_list"""):    
+        print(row)
+        
+def delete_task(id):
+    sql = """ DELETE FROM task_list WHERE id = (?) """
+    cur.execute(sql,[id])
+    con.commit()
+    print("A tarefa " + str(id) + " foi deletada")
+
+def change_task_status(id):
+    sql = """ UPDATE task_list SET status = 1 WHERE id = (?) """
+    cur.execute(sql,[id])
+    con.commit()
+    print("A tarefa " + str(id) + " foi concluída")
+    
+
 
