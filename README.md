@@ -1,11 +1,18 @@
-<h1>CLI To Do List using Python</h1>
+<h1>CLI To-Do List (Python)</h1>
 
-<h3>Imported Libs:</h3>
+<h3>Dependencies</h3>
 <ul>
-	<li>SQLite3</li>
+  <li>SQLite3</li>
 </ul>
 
-<h3>A Little More:</h3>
-<p>Project started in 12/30/2025 with Alpha Release in 01/06/2026.
-	The objective of this project was to remember importants concepts of Python's programming language.
+<h3>About the Project</h3>
+<p>
+  This project was started on December 30, 2025, with its first alpha release on January 6, 2026.
+  Its primary goal is to reinforce core Python programming concepts through the development of a simple
+  command-line to-do list application.
+</p>
+
+<p>
+  Although there are several opportunities for improvement — such as better handling of edge cases and
+  unexpected states during function execution — the core architecture is functional and stable.
 </p>
